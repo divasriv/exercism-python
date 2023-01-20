@@ -23,10 +23,10 @@ def score(dice, category):
     if category==CHOICE:
         return sum(dice)
     if category==LITTLE_STRAIGHT:
-        if(dice==[1,2,3,4,5]): #no matter what order, dice.sort will bring it back to this order
+        if dice==[1,2,3,4,5]: #no matter what order, dice.sort will bring it back to this order
             return 30
     if category==BIG_STRAIGHT:
-        if(dice==[2,3,4,5,6]):
+        if dice==[2,3,4,5,6]:
             return 30
     if category==YACHT:
         if len(set(dice))==1: #all digits are equal, so set size becomes 1
