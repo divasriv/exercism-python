@@ -4,8 +4,6 @@ def label(colors):
     zeros= 10**color_list.index(colors[2])
     res=zeros*val
     if res>1000:
-        return str(res//1000)+" kiloohms"
-    return str(res)+" ohms"
+        return f"{res//1000} kiloohms"
+    return f"{res} ohms"
 
-# a=label(["yellow", "violet", "yellow"])
-# print(a)
