@@ -55,8 +55,8 @@ def letter_grades(highest):
     """
     grade_list=[]
     inc=int((highest-40)/4)
-    for i in range(0,4):
-        grade_list.append(41+(inc*i))
+    for val in range(0,4):
+        grade_list.append(41+(inc*val))
     return grade_list
 
 
@@ -68,8 +68,8 @@ def student_ranking(student_scores, student_names):
     :return: list - of strings in format ["<rank>. <student name>: <score>"].
     """
     res=[]
-    for i,val in enumerate(student_scores):
-        res.append(f"{i+1}. {student_names[i]}: {val}")
+    for rank,name in enumerate(student_scores):
+        res.append(f"{rank+1}. {student_names[rank]}: {name}")
     return res
 
 
@@ -79,8 +79,7 @@ def perfect_score(student_info):
     :param student_info: list - of [<student name>, <score>] lists.
     :return: list - first `[<student name>, 100]` or `[]` if no student score of 100 is found.
     """
-    for i in student_info:
-        if 100 in i:
-            return i
+    for score in student_info:
+        if 100 in score:
+            return score
     return []
-
