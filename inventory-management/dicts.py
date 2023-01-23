@@ -42,7 +42,7 @@ def decrement_items(inventory, items):
             if inventory[key]>value:
                 updated[key] = inventory[key]-value
             else:
-                    updated[key]=0
+                updated[key]=0
     return updated
 
 
