@@ -7,7 +7,7 @@ def create_inventory(items):
     :param items: list - list of items to create an inventory from.
     :return: dict - the inventory dictionary.
     """
-    counts = dict()
+    counts = {}
     for item in items:
         counts[item] = items.count(item)
     return counts
@@ -24,7 +24,7 @@ def add_items(inventory, items):
     updated = {**inventory, **items}
     for key, value in updated.items():
         if key in inventory and key in items:
-                updated[key] = value+inventory[key]
+            updated[key] = value+inventory[key]
     return updated
 
 
@@ -39,10 +39,10 @@ def decrement_items(inventory, items):
     updated = {**inventory, **items}
     for key, value in updated.items():
         if key in inventory and key in items:
-                if inventory[key]>value:
-                    updated[key] = inventory[key]-value
-                else:
-                     updated[key]=0
+            if inventory[key]>value:
+                updated[key] = inventory[key]-value
+            else:
+                    updated[key]=0
     return updated
 
 
@@ -54,7 +54,7 @@ def remove_item(inventory, item):
     :return: dict - updated inventory with item removed. Current inventory if item does not match.
     """
     if item in inventory:
-         inventory.pop(item)
+        inventory.pop(item)
     return inventory
 
 
