@@ -36,7 +36,7 @@ def check_drinks(drink_name, drink_ingredients):
     """
     if any(ingredient in ALCOHOLS for ingredient in drink_ingredients):
         return f"{drink_name} Cocktail"
-    return f"{drink_name} Mocktail"  
+    return f"{drink_name} Mocktail"
 
 
 def categorize_dish(dish_name, dish_ingredients):
@@ -46,22 +46,24 @@ def categorize_dish(dish_name, dish_ingredients):
     :param dish_ingredients: list - ingredients for the dish.
     :return: str - the dish name appended with ": <CATEGORY>".
 
-    This function should return a string with the `dish name: <CATEGORY>` (which meal category the dish belongs to).
+    This function should return a dish_type with the `dish name: <CATEGORY>` (which meal category the dish belongs to).
     `<CATEGORY>` can be any one of  (VEGAN, VEGETARIAN, PALEO, KETO, or OMNIVORE).
     All dishes will "fit" into one of the categories imported from `sets_categories_data.py`
 
     """
+    dish_type=''
     if dish_ingredients.issubset(VEGAN):
-        return f"{dish_name}: VEGAN" 
+        dish_type = f"{dish_name}: VEGAN"
     if dish_ingredients.issubset(VEGETARIAN):
-        return f"{dish_name}: VEGETARIAN"
+        dish_type = f"{dish_name}: VEGETARIAN"
     if dish_ingredients.issubset(KETO):
-        return f"{dish_name}: KETO"
+        dish_type = f"{dish_name}: KETO"
     if dish_ingredients.issubset(PALEO):
-        return f"{dish_name}: PALEO" 
+        dish_type = f"{dish_name}: PALEO"
     if dish_ingredients.issubset(OMNIVORE):
-        return f"{dish_name}: OMNIVORE"
-    
+        dish_type = f"{dish_name}: OMNIVORE"
+    return dish_type
+
 
 def tag_special_ingredients(dish):
     """Compare `dish` ingredients to `SPECIAL_INGREDIENTS`.
